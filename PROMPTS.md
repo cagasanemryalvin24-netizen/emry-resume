@@ -50,5 +50,3 @@ I used Grok (built by xAI) to help me complete this interactive resume project.
 I reviewed, tested, and fully understand every part of the final code I submitted.  
 AI was used only as a helper tool — I did not copy blindly. I edited the content, tested all features, and made sure everything works.
 
-**Signature:**  
-Emry Alvin I. Cagasan  
