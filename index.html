@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emry Cagasan - Interactive Resume</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- WELCOME PROMPT (updated - does NOT overwrite About Me) -->
+<script>
+    window.addEventListener('load', function () {
+        const visitorName = prompt("👋 Welcome! What's your name?");
+
+        if (visitorName && visitorName.trim() !== "") {
+            // Create a new friendly greeting
+            const greetingHTML = `
+                <p style="font-size: 1.25rem; font-weight: 600; color: #2c3e50; margin-bottom: 18px;">
+                    👋 Hi ${visitorName}! Thanks for visiting my interactive resume!
+                </p>
+            `;
+
+            // Add the greeting at the top of the About Me section
+            const aboutContent = document.querySelector('.about-content');
+            aboutContent.insertAdjacentHTML('afterbegin', greetingHTML);
+        }
+    });
+</script>
+    <!-- RESUME STARTS HERE -->
+    <header id="resume-start">
+        <div class="header-content">
+            <div class="profile-header">
+                <img src="assets/images/emry.jpg" alt="Emry Cagasan Profile Photo" class="profile-img">
+                <div>
+                    <h1>Emry Cagasan</h1>
+                    <p class="title">Aspiring Web Developer | IT Student</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+            <div>
+                <button id="dark-mode-btn">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <h2><i class="fas fa-user-circle"></i> About Me</h2>
+            <div class="about-content">
+                <p id="greeting">Hi there! I'm Emry Alvin I. Cagasan, a 22-year-old passionate IT student from Cagayan de Oro City. Currently pursuing my Bachelor of Science in Information Technology at the University of Science and Technology of the Philippines (USTP), I specialize in creating modern, interactive, and responsive web applications using HTML, CSS, JavaScript, and jQuery. With a creative mindset and strong problem-solving skills, I enjoy turning ideas into functional digital experiences. I'm eager to grow as a web developer and contribute innovative solutions in the tech industry.</p>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <table>
+                <thead><tr><th>Institution</th><th>Degree</th><th>Year</th></tr></thead>
+                <tbody>
+                    <tr><td>University of Science and Technology of the Philippines (USTP)</td><td>Bachelor of Science in Information Technology</td><td>2024 – Present</td></tr>
+                    <tr><td>University of Science and Technology of the Philippines (USTP)</td><td>BS Electrical Engineering</td><td>2023 – 2024</td></tr>
+                    <tr><td>Lourdes College, Inc.</td><td>Senior High Diploma</td><td>2021 – 2023</td></tr>
+                    <tr><td>St. Mary’s Academy of Carmen</td><td>High School Diploma</td><td>2017 – 2021</td></tr>
+                    <tr><td>City Central School</td><td>Elementary Diploma</td><td>2011 – 2017</td></tr>
+                    <tr><td>Xavier University Grade School</td><td>Preschool Certificate</td><td>2008 – 2011</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+            <h2><i class="fas fa-tools"></i> Skills</h2>
+            <div class="skills-container">
+                <div class="skill-item"><span>HTML5</span><div class="progress-bar"><div class="progress" data-width="95"></div></div></div>
+                <div class="skill-item"><span>CSS3</span><div class="progress-bar"><div class="progress" data-width="90"></div></div></div>
+                <div class="skill-item"><span>JavaScript</span><div class="progress-bar"><div class="progress" data-width="85"></div></div></div>
+                <div class="skill-item"><span>jQuery</span><div class="progress-bar"><div class="progress" data-width="80"></div></div></div>
+                <div class="skill-item"><span>Responsive Design</span><div class="progress-bar"><div class="progress" data-width="88"></div></div></div>
+                <div class="skill-item"><span>Git &amp; GitHub</span><div class="progress-bar"><div class="progress" data-width="75"></div></div></div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <h2><i class="fas fa-briefcase"></i> Projects</h2>
+            <input type="text" id="project-search" placeholder="🔍 Search projects...">
+            <div id="projects-container">
+                <div class="project-card" data-category="web">
+                    <h3>Interactive Resume</h3>
+                    <p>This very page! Built with JS + jQuery as required.</p>
+                </div>
+                <div class="project-card" data-category="web">
+                    <h3>E-Commerce Demo</h3>
+                    <p>Dynamic shopping cart with real-time calculations.</p>
+                </div>
+                <div class="project-card" data-category="mobile">
+                    <h3>Task Manager App</h3>
+                    <p>Mobile-first responsive task tracker UI.</p>
+                </div>
+            </div>
+            <button id="toggle-projects">View More Project Details</button>
+            <div id="extra-projects" style="display:none; margin-top:1rem;">
+                <p><strong>All projects</strong> follow clean code practices and are hosted on GitHub.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+            <form id="contact-form">
+                <label>Name</label>
+                <input type="text" id="form-name" required>
+                <label>Email</label>
+                <input type="email" id="form-email" required>
+                <label>Message</label>
+                <textarea id="form-message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="form-feedback"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emry Cagasan • Cagayan de Oro City, Philippines • Made with ❤️ and jQuery</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
