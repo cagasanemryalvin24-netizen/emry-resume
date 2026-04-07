@@ -1,6 +1,6 @@
 // ==================== JAVASCRIPT (3+ features) ====================
 
-// 1. Show/Hide Toggle for extra projects
+// 1. Show/Hide Toggle
 document.getElementById('toggle-projects').addEventListener('click', function () {
     const extra = document.getElementById('extra-projects');
     if (extra.style.display === 'none' || extra.style.display === '') {
@@ -12,7 +12,7 @@ document.getElementById('toggle-projects').addEventListener('click', function ()
     }
 });
 
-// 2. Contact form validation + createElement / appendChild
+// 2. Contact form validation + createElement
 const form = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
 
@@ -45,26 +45,22 @@ document.getElementById('project-search').addEventListener('input', function () 
     });
 });
 
-// Animate progress bars
+// Progress bars animation
 window.addEventListener('load', () => {
     document.querySelectorAll('.progress').forEach(bar => {
         const width = bar.getAttribute('data-width');
-        setTimeout(() => { 
-            bar.style.width = width + '%'; 
-        }, 600);
+        setTimeout(() => { bar.style.width = width + '%'; }, 600);
     });
 });
 
 // ==================== JQUERY (2+ interactions) ====================
 $(document).ready(function () {
-    // jQuery 1: Dark mode toggle
     $('#dark-mode-btn').on('click', function () {
         $('body').toggleClass('dark-mode');
         const isDark = $('body').hasClass('dark-mode');
         $(this).text(isDark ? '☀️' : '🌙');
     });
 
-    // jQuery 2: Click any skill to highlight
     $('.skill-item').on('click', function () {
         $(this).toggleClass('highlighted');
         if ($(this).hasClass('highlighted')) {
