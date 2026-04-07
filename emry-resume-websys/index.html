@@ -11,16 +11,25 @@
 </head>
 <body>
 
-    <!-- WELCOME PROMPT (replaces the old login) -->
-    <script>
-        window.addEventListener('load', function () {
-            const name = prompt("👋 Welcome! What's your name?");
-            if (name && name.trim() !== "") {
-                const greeting = document.getElementById('greeting');
-                greeting.innerHTML = `Hi ${name}! 👋 Welcome to my interactive resume.<br>I'm Emry Alvin I. Cagasan, a 22-year-old IT student from Cagayan de Oro City.`;
-            }
-        });
-    </script>
+<!-- WELCOME PROMPT (updated - does NOT overwrite About Me) -->
+<script>
+    window.addEventListener('load', function () {
+        const visitorName = prompt("👋 Welcome! What's your name?");
+
+        if (visitorName && visitorName.trim() !== "") {
+            // Create a new friendly greeting
+            const greetingHTML = `
+                <p style="font-size: 1.25rem; font-weight: 600; color: #2c3e50; margin-bottom: 18px;">
+                    👋 Hi ${visitorName}! Thanks for visiting my interactive resume!
+                </p>
+            `;
+
+            // Add the greeting at the top of the About Me section
+            const aboutContent = document.querySelector('.about-content');
+            aboutContent.insertAdjacentHTML('afterbegin', greetingHTML);
+        }
+    });
+</script>
     <!-- RESUME STARTS HERE -->
     <header id="resume-start">
         <div class="header-content">
