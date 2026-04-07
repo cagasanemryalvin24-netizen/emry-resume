@@ -30,16 +30,6 @@ I used Grok (built by xAI) to help me complete this interactive resume project.
 **Entry #3**  
 **Tool Used:** Grok (xAI)  
 **Prompt (copy-paste exactly):**  
-"can you make a about me draft"  
-
-**AI Output:** Professional About Me paragraph with my name, age, city, and goals.  
-**How I used/modified it:** I used the draft directly in the #about section (kept id="greeting" so the JavaScript prompt still works). I only changed a few words to match my personal story.
-
----
-
-**Entry #4**  
-**Tool Used:** Grok (xAI)  
-**Prompt (copy-paste exactly):**  
 "please fix the buttons for the 'about, education, skills, projects, and contacts'" + (shared my current HTML and JS)  
 
 **AI Output:** Updated CSS with scroll-behavior: smooth and scroll-margin-top: 130px.  
