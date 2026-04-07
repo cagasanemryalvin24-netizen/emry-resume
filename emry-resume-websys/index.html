@@ -5,32 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emry Cagasan - Interactive Resume</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Fonts (modern & appealing) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- WELCOME PROMPT (replaces the old login) -->
     <script>
-        let loggedIn = false;
-        
-        while (!loggedIn) {
-            const username = prompt("🔑 ADMIN USERNAME (required to view resume):");
-            const password = prompt("🔑 PASSWORD (required to view resume):");
-            
-            // CHANGE THESE CREDENTIALS IF YOU WANT
-            if (username && username.toLowerCase() === "admin" && password === "emry2004") {
-                loggedIn = true;
-                alert("✅ ACCESS GRANTED!\n\nWelcome to my Digital Dream Resume, Emry Alvin I. Cagasan (22) ✨\n\nEnjoy the interactive experience!");
-            } else {
-                alert("❌ Incorrect Admin Username or Password!\n\nPlease try again.");
+        window.addEventListener('load', function () {
+            const name = prompt("👋 Welcome! What's your name?");
+            if (name && name.trim() !== "") {
+                const greeting = document.getElementById('greeting');
+                greeting.innerHTML = `Hi ${name}! 👋 Welcome to my interactive resume.<br>I'm Emry Alvin I. Cagasan, a 22-year-old IT student from Cagayan de Oro City.`;
             }
-        }
-        // If login is successful, the rest of the page will now load
+        });
     </script>
-    <header>
+    <!-- RESUME STARTS HERE -->
+    <header id="resume-start">
         <div class="header-content">
             <div class="profile-header">
                 <img src="assets/images/emry.jpg" alt="Emry Cagasan Profile Photo" class="profile-img">
@@ -59,7 +51,8 @@
         <section id="about" class="section">
             <h2><i class="fas fa-user-circle"></i> About Me</h2>
             <div class="about-content">
-                <p id="greeting">Hi there! I'm Emry Alvin I. Cagasan, a 22-year-old passionate IT student from Cagayan de Oro City. Currently pursuing my Bachelor of Science in Information Technology at the University of Science and Technology of the Philippines (USTP), I specialize in creating modern, interactive, and responsive web applications using HTML, CSS, JavaScript, and jQuery. With a creative mindset and strong problem-solving skills, I enjoy turning ideas into functional digital experiences. I'm eager to grow as a web developer and contribute innovative solutions in the tech industry.</p>
+                <p id="greeting">Hi there! I'm Emry Alvin I. Cagasan, a 22-year-old passionate IT student from Cagayan de Oro City...</p>
+            </div>
         </section>
 
         <!-- EDUCATION -->
